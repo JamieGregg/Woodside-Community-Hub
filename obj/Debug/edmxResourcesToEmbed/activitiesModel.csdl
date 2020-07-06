@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="woodsideCommunityHub3Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="woodsideCommunityHub3Entities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="activitiesCount" ReturnType="Collection(woodsideCommunityHub3Model.activitiesCount_Result)" />
+    <FunctionImport Name="exportActivities" ReturnType="Collection(woodsideCommunityHub3Model.exportActivities_Result)" />
+    <FunctionImport Name="exportActivities2" ReturnType="Collection(woodsideCommunityHub3Model.exportActivities2_Result)" />
+  </EntityContainer>
+  <ComplexType Name="activitiesCount_Result">
+    <Property Type="String" Name="acitivityName" Nullable="false" MaxLength="25" />
+    <Property Type="Int32" Name="Total" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="exportActivities_Result">
+    <Property Type="String" Name="acitivityName" Nullable="false" MaxLength="25" />
+    <Property Type="Int32" Name="Total" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="exportActivities2_Result">
+    <Property Type="String" Name="acitivityName" Nullable="false" MaxLength="25" />
+    <Property Type="Int32" Name="Total" Nullable="true" />
+  </ComplexType>
+</Schema>

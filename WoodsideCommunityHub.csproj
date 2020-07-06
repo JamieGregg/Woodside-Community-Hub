@@ -1,0 +1,466 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DB739B87-F77B-4975-B4C8-C6428B167E9E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>WoodsideCommunityHub</RootNamespace>
+    <AssemblyName>WoodsideCommunityHub</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\BookingChild.cs" />
+    <Compile Include="Classes\booking.cs" />
+    <Compile Include="Classes\activity.cs" />
+    <Compile Include="Classes\children.cs" />
+    <Compile Include="Classes\CustomException.cs" />
+    <Compile Include="DataSet1.cs">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DatasetBookinfRecords.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatasetBookinfRecords.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetBooking.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetBooking.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="datasetShowUpcomingBookingxsd.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>datasetShowUpcomingBookingxsd.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Activities\frm_activities.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Activities\frm_activities.Designer.cs">
+      <DependentUpon>frm_activities.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Booking\DataSetShowBookings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetShowBookings.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Booking\frm_booking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Booking\frm_booking.Designer.cs">
+      <DependentUpon>frm_booking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Children\frm_children.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Children\frm_children.Designer.cs">
+      <DependentUpon>frm_children.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\LogOn\frm_logOn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LogOn\frm_logOn.Designer.cs">
+      <DependentUpon>frm_logOn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainMenu\frm_mainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainMenu\frm_mainMenu.Designer.cs">
+      <DependentUpon>frm_mainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Staff\frm_staff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Staff\frm_staff.Designer.cs">
+      <DependentUpon>frm_staff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Transport\frm_transport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Transport\frm_transport.Designer.cs">
+      <DependentUpon>frm_transport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Booking\frm_ListOfBookings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Booking\frm_ListOfBookings.Designer.cs">
+      <DependentUpon>frm_ListOfBookings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="invoiceDataset.cs">
+      <DependentUpon>invoiceDataset.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="invoiceDataset.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>invoiceDataset.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Classes\userInterface.cs" />
+    <Compile Include="Classes\staff.cs" />
+    <Compile Include="Classes\StaffBooking.cs" />
+    <Compile Include="statsOnBookings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>statsOnBookings.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="woodsideCommunityHub3DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>woodsideCommunityHub3DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="woodsideCommunityHub3ShowBookings.cs">
+      <DependentUpon>woodsideCommunityHub3ShowBookings.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="woodsideCommunityHub3ShowBookings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>woodsideCommunityHub3ShowBookings.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Reports\bookings.rdlc" />
+    <EmbeddedResource Include="Reports\bookingStats.rdlc" />
+    <EmbeddedResource Include="Reports\InvoiceBooking.rdlc" />
+    <EmbeddedResource Include="Reports\ShowBookingsMainMenu.rdlc" />
+    <EmbeddedResource Include="Forms\Activities\frm_activities.resx">
+      <DependentUpon>frm_activities.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Booking\frm_booking.resx">
+      <DependentUpon>frm_booking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Booking\frm_ListOfBookings.resx">
+      <DependentUpon>frm_ListOfBookings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Children\frm_children.resx">
+      <DependentUpon>frm_children.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LogOn\frm_logOn.resx">
+      <DependentUpon>frm_logOn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainMenu\frm_mainMenu.resx">
+      <DependentUpon>frm_mainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Staff\frm_staff.resx">
+      <DependentUpon>frm_staff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Transport\frm_transport.resx">
+      <DependentUpon>frm_transport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DatasetBookinfRecords.xsc">
+      <DependentUpon>DatasetBookinfRecords.xsd</DependentUpon>
+    </None>
+    <None Include="DatasetBookinfRecords.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DatasetBookinfRecords.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DatasetBookinfRecords.xss">
+      <DependentUpon>DatasetBookinfRecords.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetBooking.xsc">
+      <DependentUpon>DataSetBooking.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetBooking.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetBooking.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetBooking.xss">
+      <DependentUpon>DataSetBooking.xsd</DependentUpon>
+    </None>
+    <None Include="datasetShowUpcomingBookingxsd.xsc">
+      <DependentUpon>datasetShowUpcomingBookingxsd.xsd</DependentUpon>
+    </None>
+    <None Include="datasetShowUpcomingBookingxsd.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>datasetShowUpcomingBookingxsd.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="datasetShowUpcomingBookingxsd.xss">
+      <DependentUpon>datasetShowUpcomingBookingxsd.xsd</DependentUpon>
+    </None>
+    <None Include="Forms\Booking\DataSetShowBookings.xsc">
+      <DependentUpon>DataSetShowBookings.xsd</DependentUpon>
+    </None>
+    <None Include="Forms\Booking\DataSetShowBookings.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetShowBookings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Forms\Booking\DataSetShowBookings.xss">
+      <DependentUpon>DataSetShowBookings.xsd</DependentUpon>
+    </None>
+    <None Include="invoiceDataset.xsc">
+      <DependentUpon>invoiceDataset.xsd</DependentUpon>
+    </None>
+    <None Include="invoiceDataset.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>invoiceDataset.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="invoiceDataset.xss">
+      <DependentUpon>invoiceDataset.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="statsOnBookings.xsc">
+      <DependentUpon>statsOnBookings.xsd</DependentUpon>
+    </None>
+    <None Include="statsOnBookings.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>statsOnBookings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="statsOnBookings.xss">
+      <DependentUpon>statsOnBookings.xsd</DependentUpon>
+    </None>
+    <None Include="woodsideCommunityHub3DataSet.xsc">
+      <DependentUpon>woodsideCommunityHub3DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="woodsideCommunityHub3DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>woodsideCommunityHub3DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="woodsideCommunityHub3DataSet.xss">
+      <DependentUpon>woodsideCommunityHub3DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="woodsideCommunityHub3ShowBookings.xsc">
+      <DependentUpon>woodsideCommunityHub3ShowBookings.xsd</DependentUpon>
+    </None>
+    <None Include="woodsideCommunityHub3ShowBookings.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>woodsideCommunityHub3ShowBookings.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="woodsideCommunityHub3ShowBookings.xss">
+      <DependentUpon>woodsideCommunityHub3ShowBookings.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-children-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-new-ticket-80.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-staff-80.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-trolleybus-80.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-trophy-80.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Collapse Arrow_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Expand Arrow_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\staff_white_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_white.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_staff_highlight.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\staff_highlighted copy copy.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\staff_white.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\transport_white.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\transport_highlighted.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trophy_highlighted.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trophy_white.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\booking_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\booking_highlighted.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\child_highlighted.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\child_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Translink_timetable_buttons.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\errorIcon.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bookingScreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bookingCopy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled-1 copy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bookingMainScreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BookingImage.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CreateBooking.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BookingMenu.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BookingTesterImage.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\booking.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BookingOrder.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Payment.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buttonBooking.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ButtonTransport.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ButtonViewBookings.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DataSets\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LightTransportingMenu.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\transportDark.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DarkBooking.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\darkViewBookings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LightBooking.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LightviewBookings.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Invoice.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\signature5c77f6c0be22e.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

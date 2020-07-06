@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="datasetShowUpcomingBookingxsd" targetNamespace="http://tempuri.org/datasetShowUpcomingBookingxsd.xsd" xmlns:mstns="http://tempuri.org/datasetShowUpcomingBookingxsd.xsd" xmlns="http://tempuri.org/datasetShowUpcomingBookingxsd.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="woodsideCommunityHub3ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="woodsideCommunityHub3ConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.WoodsideCommunityHub.Properties.Settings.GlobalReference.Default.woodsideCommunityHub3ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataTable1TableAdapter" GeneratorDataComponentClassName="DataTable1TableAdapter" Name="DataTable1" UserDataComponentName="DataTable1TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="woodsideCommunityHub3ConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Activity.acitivityName, Child.childFirstname, Child.childSurname, Transporting.arrivalTime, Booking.weekStart
+FROM            Activity INNER JOIN
+                         Booking ON Activity.activityId = Booking.activityId INNER JOIN
+                         Transporting ON Booking.transportId = Transporting.transportId INNER JOIN
+                         BookingChild ON Booking.bookingID = BookingChild.bookingID INNER JOIN
+                         Child ON BookingChild.childID = Child.childId</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="acitivityName" DataSetColumn="acitivityName" />
+              <Mapping SourceColumn="childFirstname" DataSetColumn="childFirstname" />
+              <Mapping SourceColumn="childSurname" DataSetColumn="childSurname" />
+              <Mapping SourceColumn="arrivalTime" DataSetColumn="arrivalTime" />
+              <Mapping SourceColumn="weekStart" DataSetColumn="weekStart" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="datasetShowUpcomingBookingxsd" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="datasetShowUpcomingBookingxsd" msprop:Generator_UserDSName="datasetShowUpcomingBookingxsd">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_RowClassName="DataTable1Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="acitivityName" msprop:Generator_ColumnVarNameInTable="columnacitivityName" msprop:Generator_ColumnPropNameInRow="acitivityName" msprop:Generator_ColumnPropNameInTable="acitivityNameColumn" msprop:Generator_UserColumnName="acitivityName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="childFirstname" msprop:Generator_ColumnVarNameInTable="columnchildFirstname" msprop:Generator_ColumnPropNameInRow="childFirstname" msprop:Generator_ColumnPropNameInTable="childFirstnameColumn" msprop:Generator_UserColumnName="childFirstname">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="childSurname" msprop:Generator_ColumnVarNameInTable="columnchildSurname" msprop:Generator_ColumnPropNameInRow="childSurname" msprop:Generator_ColumnPropNameInTable="childSurnameColumn" msprop:Generator_UserColumnName="childSurname">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="arrivalTime" msprop:Generator_ColumnVarNameInTable="columnarrivalTime" msprop:Generator_ColumnPropNameInRow="arrivalTime" msprop:Generator_ColumnPropNameInTable="arrivalTimeColumn" msprop:Generator_UserColumnName="arrivalTime" type="xs:int" />
+              <xs:element name="weekStart" msprop:Generator_ColumnVarNameInTable="columnweekStart" msprop:Generator_ColumnPropNameInRow="weekStart" msprop:Generator_ColumnPropNameInTable="weekStartColumn" msprop:Generator_UserColumnName="weekStart" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

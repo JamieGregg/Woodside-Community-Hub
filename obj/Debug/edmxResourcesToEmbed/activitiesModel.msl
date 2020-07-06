@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="woodsideCommunityHub3ModelStoreContainer" CdmEntityContainer="woodsideCommunityHub3Entities">
+    <FunctionImportMapping FunctionImportName="activitiesCount" FunctionName="woodsideCommunityHub3Model.Store.activitiesCount">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="woodsideCommunityHub3Model.activitiesCount_Result">
+          <ScalarProperty Name="acitivityName" ColumnName="acitivityName" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="exportActivities" FunctionName="woodsideCommunityHub3Model.Store.exportActivities">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="woodsideCommunityHub3Model.exportActivities_Result">
+          <ScalarProperty Name="acitivityName" ColumnName="acitivityName" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="exportActivities2" FunctionName="woodsideCommunityHub3Model.Store.exportActivities2">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="woodsideCommunityHub3Model.exportActivities2_Result">
+          <ScalarProperty Name="acitivityName" ColumnName="acitivityName" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>
